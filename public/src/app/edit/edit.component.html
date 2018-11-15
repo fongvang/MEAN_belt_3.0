@@ -1,0 +1,10 @@
+<main>
+	<h3>Edit this restaurant! ({{_rest.name}})</h3>
+	<p *ngFor="let x of errors" style="color:red">{{x}}</p>
+	<form (submit)="editRest()">
+		<p>Restaurant name: <input type="text" name="name" [(ngModel)]="_rest.name"></p>
+		<p>Cuisine type: <input type="text" name="cuisine" [(ngModel)]="_rest.cuisine"></p>
+		<button><a [routerLink]="['/restaurants']">Cancel</a></button>
+		<input type="submit" name="Edit!">
+	</form>
+</main>

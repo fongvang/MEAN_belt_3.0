@@ -1,0 +1,17 @@
+<main>
+	<h2>Write a review for {{_rest.name}}!</h2>
+	<p *ngFor="let x of errors" style="color:purple">{{x}}</p>
+	<form (submit)="addReview(_rest._id)">
+		<p>Name: <input type="text" name="name" [(ngModel)]="_review.name"></p>
+		<p>Review: <input type="text" name="review" [(ngModel)]="_review.review"></p>
+		<p>Rating: <select name="rating" [(ngModel)]="_review.rating">
+			<option>1</option>
+			<option>2</option>
+			<option>3</option>
+			<option>4</option>
+			<option>4</option>
+		</select></p>
+		<button><a [routerLink]="['/restaurants']">Cancel</a></button>
+		<input type="submit" name="Submit Review">
+	</form>
+</main>

@@ -1,0 +1,10 @@
+<main>
+	<h3>Register a Restaurant</h3>
+	<p *ngFor="let x of errors" style="color:red">{{x}}</p>
+	<form (submit)="makeRestaurant()">
+		<p>Name: <input type="text" name="name" [(ngModel)]="_rest.name"></p>
+		<p>Cuisine: <input type="text" name="cuisine" [(ngModel)]="_rest.cuisine"></p>
+		<input type="submit" name="Create">
+		<button [routerLink]="['/restaurants/']">Cancel</button>
+	</form>
+</main>

@@ -1,0 +1,22 @@
+<main>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+	<a [routerLink]="['/restaurants/new/']">New Restaurant!</a>
+	<table>
+		<thead>
+			<tr>
+				<th>Restaurant</th>
+				<th>Cuisine</th>
+				<th>Actions available</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let x of rests">
+				<td>{{x.name}}</td>
+				<td>{{x.cuisine}}</td>
+				<td>
+					<button [routerLink]="['/restaurants/',x._id]">Read Reviews</button> <button [routerLink]="['/restaurants/edit',x._id]">Update</button> <button (click)="deleteOne(x._id)"><a [routerLink]="['/restaurants']">Delete</a></button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</main>
